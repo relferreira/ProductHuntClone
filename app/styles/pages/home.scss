@@ -1,6 +1,77 @@
+$card-border-color: #ccc;
+$home-background: #f6f6f6;
+
 .home{
+	background: $home-background;
 	
-	&__title{
-		color: red;
+	&__container{
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+
+		@media screen and (min-width: $break-small){
+			flex-direction: row;
+			justify-content: space-around;
+			flex-wrap: wrap;
+		}
+	}
+
+	&__loading{
+		align-self: center;
+	}
+
+	&__filters{
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	&__card{
+		display: flex;
+		padding: 8px;
+		background: #ffffff;
+		border-bottom: 1px solid $card-border-color;
+
+		@media screen and (min-width: $break-small){
+			flex: 0 0 40%;
+			margin-top: 10px;
+			border: 1px solid #ccc;
+			border-radius: 2px;
+		}
+
+		@media screen and (min-width: $break-large){
+			flex: 0 0 30%;
+		}
+	}
+
+	&__card-image{
+		width: 80px;
+
+		img{
+			width: 100%;
+		}
+	}
+
+	&__card-content{
+		flex: 1;
+		margin-left: 10px;
+
+		a{
+			text-decoration: none;
+			color: #999
+		}
+
+		span{
+			display: block;
+			width: 100%;
+		}
+	}
+
+	&__card-title{
+		font-size: 20px;
+	}
+
+	&__card-subtitle{
+		margin: 5px 0 0 0;
+		font-size: 14px;
 	}
 }

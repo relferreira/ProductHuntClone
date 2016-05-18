@@ -8,6 +8,7 @@
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
@@ -20,12 +21,65 @@
     <!-- endbuild -->
     
   </head>
-  <body ng-app="productHunt">
+  <body ng-app="productHunt" layout="row" data-ng-clock>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <ui-view></ui-view>
+    <section layout="row" flex>
+        <md-sidenav class="sidenav md-sidenav-left md-whiteframe-z2" md-component-id="menu-drawer" md-is-locked-open="$mdMedia('gt-xs')">
+            <header class="sidenav__header">
+                <img src="images/product-hunt-logo-vertical-orange.png">
+            </header>
+            <md-content>
+                <ul>
+                    <h3 class="sidenav__menu-title">Categories</h3>
+                    <li>
+                        <a class="sidenav__link md-button md-ink-ripple" ui-sref="funcionario" >
+                            Tech
+                            <div class="md-ripple-container"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sidenav__link md-button md-ink-ripple" ui-sref="funcionario" >
+                            Games
+                            <div class="md-ripple-container"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sidenav__link md-button md-ink-ripple" ui-sref="funcionario" >
+                            Books
+                            <div class="md-ripple-container"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sidenav__link md-button md-ink-ripple" ui-sref="funcionario" >
+                            Podcasts
+                            <div class="md-ripple-container"></div>
+                        </a>
+                    </li>
+                </ul>
+            </md-content>
+        </md-sidenav>
+        <md-content layout="column" flex>
+            <md-toolbar data-ng-controller="ToolbarCtrl as toolbarVm">
+                <div class="toolbar md-toolbar-tools">
+                    <md-button class="toolbar__menu-icon md-icon-button" data-ng-click="toolbarVm.openDrawer()" aria-label="Menu" hide-gt-xs>
+                        <md-icon class="toolbar__menu-icon">menu</md-icon>
+                    </md-button>
+                    <h2>
+                        <span>Product Hunt</span>
+                    </h2>
+                    <span flex></span>
+                    <!-- <notificacao numero="0"></notificacao> -->
+                </div>
+            </md-toolbar>
+            <md-content>
+                <ui-view></ui-view>
+            </md-content>
+
+        </md-content>
+    </section>
     
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -54,7 +108,15 @@
     <!-- build:js scripts/main.js -->
     <script src="/app.js"></script>
     <script src="/template.js"></script>
+    <script src="/shared/url.js"></script>
+    <script src="/shared/config.js"></script>
+    <script src="/shared/httpInterceptor.js"></script>
+    <script src="/shared/toolbar/toolbarController.js"></script>
+
+    <script src="/resources/postResource.js"></script>
+
     <script src="/components/home/homeController.js"></script>
+    <script src="/components/detail/detailController.js"></script>
     <!-- endbuild -->
   </body>
 </html>

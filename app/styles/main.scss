@@ -1,6 +1,12 @@
 // bower:scss
 // endbower
 
+@import "partials/base";
+@import "partials/breakpoints";
+@import "partials/toolbar";
+@import "partials/sidenav";
+@import "partials/breakpoints";
+
 *{
 	padding: 0 0;
 	margin: 0 0;

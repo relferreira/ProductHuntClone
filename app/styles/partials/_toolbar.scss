@@ -1,0 +1,13 @@
+
+$toolbar-text-color: #ffffff;
+$toolbar-menu-color: #ffffff;
+
+.toolbar{
+
+	color: $toolbar-text-color;
+	background: $primary-color;
+
+	&__menu-icon{
+		color: $toolbar-menu-color;
+	}
+}

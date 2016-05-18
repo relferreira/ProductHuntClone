@@ -1,1 +1,20 @@
-<h1 class="home__title">Hello World! {{homeVm.test}}</h1>
+<div class="home" >
+	<div class="home__filters">
+		<md-button data-ng-click="homeVm.listPopularPosts()">Popular</md-button>
+		<md-button data-ng-click="homeVm.listNewestPosts()">Newer</md-button>
+	</div>
+	<div class="home__container">
+		<md-progress-circular class="home__loading" data-ng-show="homeVm.loading" md-mode="indeterminate"></md-progress-circular>
+		<div class="home__card" data-ng-click="homeVm.selectPost(post)" data-ng-repeat="post in homeVm.posts">
+			<div class="home__card-image">
+				<img data-ng-src="{{post.thumbnail['image_url']}}">
+			</div>
+			<div class="home__card-content">
+				<a href="">
+					<span class="home__card-title">{{post.name}}</span>
+					<span class="home__card-subtitle">{{post.tagline}}</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
