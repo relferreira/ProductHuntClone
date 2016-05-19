@@ -5,23 +5,20 @@ Micro clone of Produc Hunt written in AngularJS
 ## Instructions:
 
 1. Install global dependencies
-	
-	npm install -g gulp
 
-	npm install -g bower
-
-	npm install -g karma-cli
-
-	npm install -g phantomjs 
+        npm install -g gulp
+        npm install -g bower
+        npm install -g karma-cli
+        npm install -g phantomjs 
 
 2. Install node modules:
-	
-	npm install
+
+        npm install
 
 3. Install bower dependencies:
 
-	bower install
+        bower install
 
 4. Run gulp
 
-	gulp serve
+        gulp serve
