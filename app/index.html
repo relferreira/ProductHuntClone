@@ -35,7 +35,7 @@
                 <ul>
                     <h3 class="sidenav__menu-title">Categories</h3>
                     <li>
-                        <a class="sidenav__link md-button md-ink-ripple" ui-sref="home({category: 'tech'})" ui-sref-active="sidenav__link--selected"  >
+                        <a class="sidenav__link md-button md-ink-ripple" ui-sref="home({category: 'tech'})" ui-sref-active="sidenav__link--selected">
                             Tech
                             <div class="md-ripple-container"></div>
                         </a>
@@ -71,7 +71,16 @@
                         <span>Product Hunt</span>
                     </h2>
                     <span flex></span>
-                    <!-- <notificacao numero="0"></notificacao> -->
+                    <md-menu md-position-mode="target-right target">
+                        <md-button class="md-icon-button" ng-click="toolbarVm.openOverflowMenu($mdOpenMenu, $event)">
+                            <md-icon md-menu-origin>more_vert</md-icon>
+                        </md-button>
+                        <md-menu-content width="4">
+                            <md-menu-item>
+                                <md-button ng-click="ctrl.redial($event)">Login</md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
                 </div>
             </md-toolbar>
             <md-content>

@@ -4,14 +4,19 @@ angular.module('productHunt')
 	.controller('ToolbarCtrl', toolbarCtrl);
 
 
-toolbarCtrl.$inject = ['$mdSidenav'];
-function toolbarCtrl($mdSidenav){
+toolbarCtrl.$inject = ['$mdSidenav', '$mdDialog'];
+function toolbarCtrl($mdSidenav, $mdDialog){
 
 	var vm = this;
 
-	this.openDrawer = openDrawer;
+	vm.openDrawer = openDrawer;
+	vm.openOverflowMenu = openOverflowMenu;
 
 	function openDrawer(){
 		$mdSidenav('menu-drawer').open();
+	}
+
+	function openOverflowMenu($mdOpenMenu, ev){
+		$mdOpenMenu(ev);
 	}
 }
