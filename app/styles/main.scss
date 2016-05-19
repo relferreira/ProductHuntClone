@@ -2,6 +2,7 @@
 // endbower
 
 @import "partials/base";
+@import "partials/zindex";
 @import "partials/breakpoints";
 @import "partials/toolbar";
 @import "partials/sidenav";
@@ -18,3 +19,4 @@
 
 
 @import "pages/home";
+@import "pages/detail";

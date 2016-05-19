@@ -1,10 +1,10 @@
 <div class="home" >
-	<div class="home__filters">
+	<div class="home__header">
+		<md-progress-circular class="home__loading" data-ng-show="homeVm.loading" md-mode="indeterminate"></md-progress-circular>
 		<md-button data-ng-click="homeVm.listPopularPosts()">Popular</md-button>
 		<md-button data-ng-click="homeVm.listNewestPosts()">Newer</md-button>
 	</div>
 	<div class="home__container">
-		<md-progress-circular class="home__loading" data-ng-show="homeVm.loading" md-mode="indeterminate"></md-progress-circular>
 		<div class="home__card" data-ng-click="homeVm.selectPost(post)" data-ng-repeat="post in homeVm.posts">
 			<div class="home__card-image">
 				<img data-ng-src="{{post.thumbnail['image_url']}}">

@@ -5,7 +5,8 @@ var app = angular.module('productHunt', [
 	'ngAnimate',
 	'ngMaterial',
 	'template',
-	'ngResource'
+	'ngResource',
+	'ngSanitize'
 ]);
 
 app.config(config);
@@ -14,10 +15,10 @@ config.$inject = ['$stateProvider', '$urlRouterProvider', '$httpProvider', '$mdT
 function config($stateProvider, $urlRouterProvider, $httpProvider, $mdThemingProvider){
 	$httpProvider.interceptors.push('HttpInterceptor');
 	$httpProvider.defaults.withCredentials = true;
-	$urlRouterProvider.otherwise('/');
+	$urlRouterProvider.otherwise('/tech');
 	$stateProvider
 		.state('home', {
-			url: '/',
+			url: '/:category',
 			templateUrl: 'components/home/home.html',
 			controller: 'HomeCtrl as homeVm'
 		})

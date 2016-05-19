@@ -35,25 +35,25 @@
                 <ul>
                     <h3 class="sidenav__menu-title">Categories</h3>
                     <li>
-                        <a class="sidenav__link md-button md-ink-ripple" ui-sref="funcionario" >
+                        <a class="sidenav__link md-button md-ink-ripple" ui-sref="home({category: 'tech'})" ui-sref-active="sidenav__link--selected"  >
                             Tech
                             <div class="md-ripple-container"></div>
                         </a>
                     </li>
                     <li>
-                        <a class="sidenav__link md-button md-ink-ripple" ui-sref="funcionario" >
+                        <a class="sidenav__link md-button md-ink-ripple" ui-sref="home({category: 'games'})" ui-sref-active="sidenav__link--selected" >
                             Games
                             <div class="md-ripple-container"></div>
                         </a>
                     </li>
                     <li>
-                        <a class="sidenav__link md-button md-ink-ripple" ui-sref="funcionario" >
+                        <a class="sidenav__link md-button md-ink-ripple" ui-sref="home({category: 'books'})"  ui-sref-active="sidenav__link--selected"  >
                             Books
                             <div class="md-ripple-container"></div>
                         </a>
                     </li>
                     <li>
-                        <a class="sidenav__link md-button md-ink-ripple" ui-sref="funcionario" >
+                        <a class="sidenav__link md-button md-ink-ripple" ui-sref="home({category: 'podcasts '})"  ui-sref-active="sidenav__link--selected"  >
                             Podcasts
                             <div class="md-ripple-container"></div>
                         </a>
@@ -102,6 +102,7 @@
     <script src="/bower_components/angular-resource/angular-resource.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="/bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     
@@ -112,6 +113,7 @@
     <script src="/shared/config.js"></script>
     <script src="/shared/httpInterceptor.js"></script>
     <script src="/shared/toolbar/toolbarController.js"></script>
+    <script src="/shared/retry/retryService.js"></script>
 
     <script src="/resources/postResource.js"></script>
 

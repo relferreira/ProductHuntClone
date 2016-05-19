@@ -3,22 +3,23 @@
 angular.module('productHunt')
 	.controller('HomeCtrl', homeCtrl);
 
-homeCtrl.$inject = ['$state', 'ProductResource']
-function homeCtrl($state, ProductResource){
+homeCtrl.$inject = ['$state', '$stateParams', 'PostsResource', 'RetryService']
+function homeCtrl($state, $stateParams, PostsResource, RetryService){
 
 	var vm = this;
-	var api = ProductResource.listTech;
+	var api = PostsResource.listAll;
 
 	vm.listPopularPosts = listPopularPosts;
 	vm.listNewestPosts = listNewestPosts;
 	vm.selectPost = selectPost;
+	vm.category = $stateParams.category;
 	vm.loading = true;
 	vm.posts = [];
 
 	listPopularPosts();
 
 	function listPopularPosts(){
-		api = ProductResource.listTech;
+		api = PostsResource.listAll;
 		listPosts();
 	}
 
@@ -27,18 +28,20 @@ function homeCtrl($state, ProductResource){
 	}
 
 	function listNewestPosts(){
-		api = ProductResource.listNewest;
-		listPosts({ category: 'tech'});
+		api = PostsResource.listNewest;
+		listPosts();
 	}
 
-	function listPosts(query){
+	function listPosts(){
 		vm.loading = true;
-		api(query).$promise.then(function(response){
+		api({ 'search[category]': vm.category}).$promise.then(function(response){
 			vm.loading = false;
 			vm.posts = response.posts;
 		}).catch(function(err){
 			vm.loading = false;
-
+			RetryService.retry().then(function(){
+				listPosts();
+			});
 		});
 	}
 

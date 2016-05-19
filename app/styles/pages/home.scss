@@ -3,6 +3,8 @@ $home-background: #f6f6f6;
 
 .home{
 	background: $home-background;
+	width: 100%;
+	height: 100%;
 	
 	&__container{
 		display: flex;
@@ -16,13 +18,13 @@ $home-background: #f6f6f6;
 		}
 	}
 
-	&__loading{
-		align-self: center;
-	}
-
-	&__filters{
+	&__header{
 		display: flex;
 		justify-content: flex-end;
+	}
+
+	&__loading{
+		flex: 1;
 	}
 
 	&__card{
