@@ -15,7 +15,18 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        'bower_components/angular/angular.js',
+
+        "bower_components/angular/angular.js",
+        'bower_components/angular-mocks/angular-mocks.js',
+        "bower_components/lodash/lodash.js",
+        "bower_components/angular-animate/angular-animate.js",
+        "bower_components/angular-aria/angular-aria.js",
+        "bower_components/angular-messages/angular-messages.js",
+        "bower_components/angular-material/angular-material.js",
+        "bower_components/angular-resource/angular-resource.js",
+        "bower_components/angular-ui-router/release/angular-ui-router.js",
+        "bower_components/angular-mocks/angular-mocks.js",
+        "bower_components/angular-sanitize/angular-sanitize.js",
 
         'app/*js',
         'app/components/**/*.js',
@@ -70,6 +81,10 @@ module.exports = function(config) {
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
+    concurrency: Infinity,
+
+    client: {
+        captureConsole: true,
+    }
   })
 }

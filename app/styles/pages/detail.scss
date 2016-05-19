@@ -23,6 +23,7 @@
 		right: 8px;
 		top: 8px;
 		color: #fff;
+		cursor: pointer;
 		z-index: $z-detail-cover-close;
 	}
 
@@ -96,7 +97,14 @@
 
 	&__comment-text{
 		flex: 1;
+		min-width: 0;
 		margin-left: 20px;
+		word-wrap: break-word;
+
+		img{
+			width: 100%;
+		}
+
 		@media screen and (min-width: $break-small){
 			font-size: 18px;
 		}

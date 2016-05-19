@@ -1,0 +1,34 @@
+<md-sidenav class="sidenav md-sidenav-left md-whiteframe-z2" md-component-id="menu-drawer" md-is-locked-open="$mdMedia('gt-xs')">
+    <header class="sidenav__header">
+        <img src="images/product-hunt-logo-vertical-orange.png">
+    </header>
+    <md-content>
+        <ul>
+            <h3 class="sidenav__menu-title">Categories</h3>
+            <li>
+                <a class="sidenav__link md-button md-ink-ripple" ui-sref="home({category: 'tech'})" ui-sref-active="sidenav__link--selected" data-ng-click="sidenavVm.close()">
+                    Tech
+                    <div class="md-ripple-container"></div>
+                </a>
+            </li>
+            <li>
+                <a class="sidenav__link md-button md-ink-ripple" ui-sref="home({category: 'games'})" ui-sref-active="sidenav__link--selected" data-ng-click="sidenavVm.close()">
+                    Games
+                    <div class="md-ripple-container"></div>
+                </a>
+            </li>
+            <li>
+                <a class="sidenav__link md-button md-ink-ripple" ui-sref="home({category: 'books'})"  ui-sref-active="sidenav__link--selected"  data-ng-click="sidenavVm.close()">
+                    Books
+                    <div class="md-ripple-container"></div>
+                </a>
+            </li>
+            <li>
+                <a class="sidenav__link md-button md-ink-ripple" ui-sref="home({category: 'podcasts '})"  ui-sref-active="sidenav__link--selected"  data-ng-click="sidenavVm.close()">
+                    Podcasts
+                    <div class="md-ripple-container"></div>
+                </a>
+            </li>
+        </ul>
+    </md-content>
+</md-sidenav>

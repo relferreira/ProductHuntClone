@@ -1,0 +1,8 @@
+.filter{
+	margin-bottom: 0px;
+	transition: all 0.1s ease-in-out;
+	&--selected{
+		color: $primary-color;
+		border-bottom: 3px solid $primary-color;
+	}
+}

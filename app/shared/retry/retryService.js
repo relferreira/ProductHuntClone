@@ -7,7 +7,7 @@ retryService.$inject = ['$mdDialog'];
 
 function retryService($mdDialog){
 
-	return{
+	return {
 		retry: retry
 	};
 

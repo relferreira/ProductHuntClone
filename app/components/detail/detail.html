@@ -4,10 +4,10 @@
 			<md-icon class="detail__cover-close" data-ng-click="detailVm.back()">close</md-icon>
 			<img class="detail__cover-image" data-ng-src="{{detailVm.post.thumbnail['image_url']}}">
 			<div class="detail__cover-filter"></div>
-			<div class="detail__cover-text">
-				<h1 class="detail__title">{{detailVm.post.name}}</h1>
-				<p>{{detailVm.post.tagline}}</p>
-			</div>
+			<a class="detail__cover-text" href="{{::detailVm.post['redirect_url']}}" target="_blank">
+				<h1 class="detail__title">{{::detailVm.post.name}}</h1>
+				<p>{{::detailVm.post.tagline}}</p>
+			</a>
 		</div>
 		<div class="detail__discussion">
 			<div class="detail__discussion-title">
@@ -20,14 +20,14 @@
 						<img data-ng-src="{{comment.user['image_url']['original']}}/?auto=format&w=9&h=9&q=5&fit=crop&blur=5">
 					</div>
 					<div class="detail__comment-text">
-						<p class="detail__comment-author"><b>{{comment.user.name}}</b> - {{comment.user.headline}}</p>
+						<p class="detail__comment-author"><b>{{::comment.user.name}}</b> - {{::comment.user.headline}}</p>
 						<p data-ng-bind-html="comment.body"></p>
 						<div class="detail__child-comment" data-ng-repeat="childComment in comment['child_comments'] track by childComment.id">
 							<div class="detail__comment-image">
 								<img data-ng-src="{{childComment.user['image_url']['original']}}/?auto=format&w=9&h=9&q=5&fit=crop&blur=5">
 							</div>
 							<div class="detail__comment-text">
-								<p class="detail__comment-author"><b>{{childComment.user.name}}</b> - {{childComment.user.headline}}</p>
+								<p class="detail__comment-author"><b>{{::childComment.user.name}}</b> - {{::childComment.user.headline}}</p>
 								<p data-ng-bind-html="childComment.body"></p>
 							</div>
 						</div>

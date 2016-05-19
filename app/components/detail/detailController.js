@@ -16,7 +16,7 @@ function detailCtrl($stateParams, $window, PostsResource, RetryService){
 
 	function getPostDetail(){
 		vm.loading = true;
-		PostsResource.detail({ id : $stateParams.postId }).$promise.then(function(response){
+		PostsResource.detail({ id: $stateParams.postId }).$promise.then(function(response){
 			vm.loading = false;
 			vm.post = response.post;
 		}).catch(function(err){

@@ -7,10 +7,16 @@
 @import "partials/toolbar";
 @import "partials/sidenav";
 @import "partials/breakpoints";
+@import "partials/filter";
 
 *{
 	padding: 0 0;
 	margin: 0 0;
+    box-sizing: border-box;
+}
+
+.container{
+	background-color: #f6f6f6;
 }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {

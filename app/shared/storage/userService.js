@@ -7,7 +7,5 @@ userService.$inject = [];
 
 function userService(){
 
-	return {
-		
-	}
+	return {};
 }

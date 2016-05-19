@@ -3,8 +3,8 @@
 angular.module('productHunt')
 	.controller('HomeCtrl', homeCtrl);
 
-homeCtrl.$inject = ['$state', '$stateParams', 'PostsResource', 'RetryService']
-function homeCtrl($state, $stateParams, PostsResource, RetryService){
+homeCtrl.$inject = ['$state', '$stateParams', 'PostsResource', 'RetryService', 'ToolbarService'];
+function homeCtrl($state, $stateParams, PostsResource, RetryService, ToolbarService){
 
 	var vm = this;
 	var api = PostsResource.listAll;
@@ -37,6 +37,7 @@ function homeCtrl($state, $stateParams, PostsResource, RetryService){
 		api({ 'search[category]': vm.category}).$promise.then(function(response){
 			vm.loading = false;
 			vm.posts = response.posts;
+			ToolbarService.setTitle(vm.category.toUpperCase());
 		}).catch(function(err){
 			vm.loading = false;
 			RetryService.retry().then(function(){

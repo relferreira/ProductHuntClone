@@ -29,6 +29,6 @@ function config($stateProvider, $urlRouterProvider, $httpProvider, $mdThemingPro
 		});
 
 	$mdThemingProvider.theme('default')
-	    .primaryPalette('orange')
-	    .accentPalette('grey');
+		.primaryPalette('orange')
+		.accentPalette('grey');
 }
